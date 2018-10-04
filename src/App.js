@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import MyMultiComponent from './components/MyMultiComponent'
+import MyListComponent from './components/MyListComponent'
 import { MyListProvider } from './components/MyListProvider'
-import { MyFooProvider } from './components/MyFooProvider'
 import './App.css';
 
 class App extends Component {
@@ -9,9 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <MyListProvider>
-          <MyFooProvider>
-            <MyMultiComponent/>
-          </MyFooProvider>
+            <MyListComponent/>
         </MyListProvider>
       </div>
     );
