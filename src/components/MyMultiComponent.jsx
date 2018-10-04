@@ -4,6 +4,14 @@ import { MyListContext } from './MyListContext'
 import { MyFooContext } from './MyFooContext'
 
 class MyMultiComponent extends React.Component {
+
+constructor(props){
+	super(props)
+	this.state = {
+		localStateKey: 'localStateValue'
+	}
+}
+
 	componentDidMount() {
 		console.log(this.props.mylist.state.num)
 	}
@@ -17,6 +25,9 @@ class MyMultiComponent extends React.Component {
 				{videos}
 				<button onClick={this.props.mylist.add}>1++</button>
 				<button onClick={this.props.mylist.remove}>remove</button>
+				<hr/>
+				{this.props.foo.state.name}
+				<button onClick={() => {this.props.foo.changeName('mark')}}>change foo state via function</button>
 			</React.Fragment>
 		)
 	}
